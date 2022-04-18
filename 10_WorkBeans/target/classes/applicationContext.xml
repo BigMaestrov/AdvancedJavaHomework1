@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="beanA"
+          class="ru.bigmaestrov.workbeans.beans.BeanA">
+    </bean>
+
+    <bean id="beanB"
+          class="ru.bigmaestrov.workbeans.beans.BeanB">
+    </bean>
+
+    <bean id="beanC"
+          class="ru.bigmaestrov.workbeans.beans.BeanC"
+          scope="prototype">
+    </bean>
+
+    <bean id="beanD"
+          class="ru.bigmaestrov.workbeans.beans.BeanD"
+          factory-method="createBean"
+          init-method = "doMyInit"
+          destroy-method="doMyDestroy">
+    </bean>
+
+    <bean id="beanE"
+          class="ru.bigmaestrov.workbeans.beans.BeanE"
+          scope="prototype"
+          factory-method="createBean"
+          init-method = "doMyInit"
+          destroy-method="doMyDestroy">
+    </bean>
+
+</beans>
