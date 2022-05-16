@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="create-tables" author="zagarazhi" context="prod,test">
+        <createTable tableName="client_table">
+            <column name="id" type="VARCHAR(8)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_client_table"/>
+            </column>
+            <column name="first_name" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(32)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middle_name" type="VARCHAR(32)"/>
+            <column name="gender" type="VARCHAR(8)"/>
+            <column name="birth_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="VARCHAR(20)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="email" type="VARCHAR(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="registration_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deletion_date" type="DATETIME"/>
+        </createTable>
+        <createTable tableName="event_table">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pk_event_table"/>
+            </column>
+            <column name="client_id" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="event" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="time" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="zagarazhi" id="addAutoIncrement"  context="prod,test">  
+        <addAutoIncrement
+            columnDataType="BIGINT"
+            columnName="id" 
+            incrementBy="1"
+            startWith="1"
+            tableName="event_table"/>  
+    </changeSet>
+
+    <changeSet id="insert-data" author="zagarazhi" context="test">
+        <insert tableName="client_table">
+            <column name="id" value="1"/>
+            <column name="first_name" value="Егор"/>
+            <column name="last_name" value="Иванов"/>
+            <column name="middle_name" value="Иванович"/>
+            <column name="gender" value="MALE"/>
+            <column name="birth_date" valueDate = "2004-12-31"/>
+            <column name="phone" value="+79275528804"/>
+            <column name="email" value="test-mail@gmail.com"/>
+            <column name="registration_date" valueDate = "2020-12-31"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

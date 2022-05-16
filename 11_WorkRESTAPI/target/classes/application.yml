@@ -1,0 +1,21 @@
+server:
+  port: ${server_port:8080}
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: client_service
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:clientsDb;DATABASE_TO_LOWER=TRUE
+    username: testUser
+    password: testUser
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  liquibase:
+    changeLog: classpath:/db/changelogs/master-changelog.xml
+    contexts: test
