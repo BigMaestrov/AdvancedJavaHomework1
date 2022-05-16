@@ -1,9 +1,6 @@
-package ru.bigmaestrov.workbeans;
+package ru.bigmaestrov.restapi;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.bigmaestrov.workbeans.beans.*;
-
-import java.lang.invoke.MethodHandles;
 
 public class Main {
     public static void main(String[] args) {

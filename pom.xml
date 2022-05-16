@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>10_WorkBeans</module>
+        <module>11_WorkRESTAPI</module>
     </modules>
 
     <properties>

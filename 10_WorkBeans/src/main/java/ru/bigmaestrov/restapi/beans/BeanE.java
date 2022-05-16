@@ -1,4 +1,4 @@
-package ru.bigmaestrov.workbeans.beans;
+package ru.bigmaestrov.restapi.beans;
 
 import org.springframework.stereotype.Component;
 
