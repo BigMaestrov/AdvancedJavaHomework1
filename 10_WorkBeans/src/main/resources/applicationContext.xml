@@ -7,27 +7,27 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="beanA"
-          class="ru.bigmaestrov.restapi.beans.BeanA">
+          class="ru.bigmaestrov.beans.BeanA">
     </bean>
 
     <bean id="beanB"
-          class="ru.bigmaestrov.restapi.beans.BeanB">
+          class="ru.bigmaestrov.beans.BeanB">
     </bean>
 
     <bean id="beanC"
-          class="ru.bigmaestrov.restapi.beans.BeanC"
+          class="ru.bigmaestrov.beans.BeanC"
           scope="prototype">
     </bean>
 
     <bean id="beanD"
-          class="ru.bigmaestrov.restapi.beans.BeanD"
+          class="ru.bigmaestrov.beans.BeanD"
           factory-method="createBean"
           init-method = "doMyInit"
           destroy-method="doMyDestroy">
     </bean>
 
     <bean id="beanE"
-          class="ru.bigmaestrov.restapi.beans.BeanE"
+          class="ru.bigmaestrov.beans.BeanE"
           scope="prototype"
           factory-method="createBean"
           init-method = "doMyInit"

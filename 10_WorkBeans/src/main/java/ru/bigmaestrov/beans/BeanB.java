@@ -1,4 +1,4 @@
-package ru.bigmaestrov.restapi.beans;
+package ru.bigmaestrov.beans;
 
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;

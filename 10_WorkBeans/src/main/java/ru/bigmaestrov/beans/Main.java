@@ -1,4 +1,4 @@
-package ru.bigmaestrov.restapi;
+package ru.bigmaestrov.beans;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
